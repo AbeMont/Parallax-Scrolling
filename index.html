@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Magic Testing</title>
+
+    <!-- MAKE SURE ALL SCRIPTS ARE IN ORDER! -->
+
+    <script src="./js/jquery.min.js" charset="utf-8"></script>
+    <script src="./js/TweenMax.min.js" charset="utf-8"></script>
+    <script src="./js/ScrollMagic.js" charset="utf-8"></script>
+    <script src="./js/plugins/animation.gsap.js" charset="utf-8"></script>
+    <script src="./js/plugins/debug.addIndicators.js" charset="utf-8"></script>
+
+
+  </head>
+
+  <body>
+
+  <style type="text/css">
+
+    body {
+      font-family: sans-serif;
+    }
+  	.parallaxParent {
+  		height: 100vh;
+  		overflow: hidden;
+  	}
+  	.parallaxParent > * {
+  		height: 200%;
+  		position: relative;
+  		top: -100%;
+  	}
+
+  </style>
+
+
+    <div class="box2 blue">
+      <p>Content 1</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet egestas tortor vitae consectetur. Pellentesque cursus facilisis sodales. Vivamus pharetra libero non elit dignissim blandit. Morbi non ultrices nunc. Aenean suscipit diam vitae sapien lacinia, non tempor tortor porta. Sed quis malesuada libero. Fusce tincidunt a mi id tristique. Maecenas ut pretium velit, non ultricies justo. Pellentesque vulputate sem sem, a lobortis lectus mollis commodo. Nam sit amet quam vitae lectus mattis placerat. Nulla non odio est. Sed pharetra lacinia sem, vel scelerisque lacus elementum quis. Morbi ac aliquam lorem. Fusce commodo elementum dictum. Fusce aliquam lectus ante, iaculis facilisis enim convallis consectetur. Sed a facilisis lectus.
+      </p>
+    </div>
+
+
+
+
+  <div class="spacer s0"></div>
+  <div id="parallax1" class="parallaxParent">
+  	<div style="background-image: url(./img/example_parallax_bg1.png);"></div>
+  </div>
+  <div class="spacer s1">
+  	<div class="box2 blue">
+  		<p>Content 1</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet egestas tortor vitae consectetur. Pellentesque cursus facilisis sodales. Vivamus pharetra libero non elit dignissim blandit. Morbi non ultrices nunc. Aenean suscipit diam vitae sapien lacinia, non tempor tortor porta. Sed quis malesuada libero. Fusce tincidunt a mi id tristique. Maecenas ut pretium velit, non ultricies justo. Pellentesque vulputate sem sem, a lobortis lectus mollis commodo. Nam sit amet quam vitae lectus mattis placerat. Nulla non odio est. Sed pharetra lacinia sem, vel scelerisque lacus elementum quis. Morbi ac aliquam lorem. Fusce commodo elementum dictum. Fusce aliquam lectus ante, iaculis facilisis enim convallis consectetur. Sed a facilisis lectus.
+      </p>
+  	</div>
+  </div>
+  <div class="spacer s0"></div>
+  <div id="parallax2" class="parallaxParent">
+  	<div style="background-image: url(img/example_parallax_bg2.png);"></div>
+  </div>
+  <div class="spacer s1">
+  	<div class="box2 blue">
+  		<p>Content 2</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet egestas tortor vitae consectetur. Pellentesque cursus facilisis sodales. Vivamus pharetra libero non elit dignissim blandit. Morbi non ultrices nunc. Aenean suscipit diam vitae sapien lacinia, non tempor tortor porta. Sed quis malesuada libero. Fusce tincidunt a mi id tristique. Maecenas ut pretium velit, non ultricies justo. Pellentesque vulputate sem sem, a lobortis lectus mollis commodo. Nam sit amet quam vitae lectus mattis placerat. Nulla non odio est. Sed pharetra lacinia sem, vel scelerisque lacus elementum quis. Morbi ac aliquam lorem. Fusce commodo elementum dictum. Fusce aliquam lectus ante, iaculis facilisis enim convallis consectetur. Sed a facilisis lectus.
+      </p>
+  	</div>
+  </div>
+  <div class="spacer s0"></div>
+  <div id="parallax3" class="parallaxParent">
+  	<div style="background-image: url(./img/example_parallax_bg3.png);"></div>
+  </div>
+  <div class="spacer s2"></div>
+
+  <script>
+  	// init controller
+  	var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
+
+  	// build scenes
+  	new ScrollMagic.Scene({triggerElement: "#parallax1"})
+  					.setTween("#parallax1 > div", {y: "80%", ease: Linear.easeNone})
+  					//.addIndicators()
+  					.addTo(controller);
+
+  	new ScrollMagic.Scene({triggerElement: "#parallax2"})
+  					.setTween("#parallax2 > div", {y: "80%", ease: Linear.easeNone})
+  					//.addIndicators()
+  					.addTo(controller);
+
+  	new ScrollMagic.Scene({triggerElement: "#parallax3"})
+  					.setTween("#parallax3 > div", {y: "80%", ease: Linear.easeNone})
+  					//.addIndicators()
+  					.addTo(controller);
+  </script>
+
+  </body>
+</html>
